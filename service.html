@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Our Projects | RoboWild</title>
-    <meta name="description" content="Explore RoboWild's active and completed robotics and IT projects supporting wildlife conservation across Southern Africa.">
-    <link rel="stylesheet" href="css_asset/style.css">
-    <script src="js_asset/main.js"></script>
-<script src="js_asset/projects.js"></script>
-<script src="js_asset/main.js"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="RoboWild, wildlife conservation, robotics, IT volunteers, South Africa, anti-poaching, drones, conservation technology">
-<meta name="author" content="Cleopatra Tayeta">
-<meta property="og:title" content="RoboWild | Robotics for Wildlife">
-<meta property="og:description" content="Connecting robotics and IT volunteers with wildlife conservation projects.">
-<meta property="og:type" content="website">
-<link rel="icon" href="IMAGES/RoboWild.jpg" type="image/x-icon">
-</head>
 <body>
 
     <!-- ===== HEADER / NAVIGATION ===== -->
@@ -35,23 +17,39 @@
     </header>
 
     <!-- ===== PAGE BANNER ===== -->
-     <section class="content-block">
-  <h2>Explore Our Projects</h2>
-  <div class="search-bar">
-    <label for="projectSearch">Search projects:</label>
-    <input type="search" id="projectSearch" placeholder="e.g. drone, anti-poaching, training…" aria-label="Search projects">
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="monitoring">Monitoring</button>
-      <button class="filter-btn" data-filter="anti-poaching">Anti-Poaching</button>
-      <button class="filter-btn" data-filter="training">Training</button>
-    </div>
-  </div>
-  <div id="projectContainer" class="project-grid" aria-live="polite"></div>
-</section>
+    <!-- Moved this to the top so it appears under the header -->
     <section class="page-banner">
         <h1>Our Projects</h1>
         <p>Technology in service of conservation, from the field to the lab.</p>
+    </section>
+
+    <!-- ===== INTRO ===== -->
+    <section class="content-block">
+        <p>
+            RoboWild runs and supports a range of robotics and IT initiatives designed with
+            our partner reserves and conservation organisations. Each project pairs volunteer
+            technologists with the specific needs of the animals and rangers they serve.
+        </p>
+    </section>
+
+    <!-- ===== DYNAMIC PROJECTS & SEARCH ===== -->
+    <section class="content-block alt-bg">
+        <h2>Explore Our Projects</h2>
+        
+        <div class="search-bar">
+            <label for="projectSearch">Search projects:</label>
+            <input type="search" id="projectSearch" placeholder="e.g. drone, anti-poaching, training…" aria-label="Search projects">
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="monitoring">Monitoring</button>
+                <button class="filter-btn" data-filter="anti-poaching">Anti-Poaching</button>
+                <button class="filter-btn" data-filter="training">Training</button>
+            </div>
+        </div>
+        
+        <!-- The JavaScript will inject the cards into this container -->
+        <div id="projectContainer" class="project-grid" aria-live="polite"></div>
     </section>
 
     <!-- ===== CALL TO ACTION ===== -->
@@ -86,6 +84,10 @@
         </div>
         <p class="copyright">&copy; 2026 RoboWild. All rights reserved.</p>
     </footer>
-    <script src="js/validation.js" defer></script>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <!-- Ensure the paths match your folder structure (js_asset) and end in .js -->
+    <script src="js_asset/main.js"></script>
+    <script src="js_asset/project.js"></script>
 </body>
 </html>

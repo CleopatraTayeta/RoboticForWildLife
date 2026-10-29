@@ -1,4 +1,4 @@
-console.log("Projects script loaded successfully!");
+/* js/projects.js – dynamic project cards + search/filter */
 
 const projects = [
   {
@@ -36,7 +36,7 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 let activeFilter = "all";
 
 function renderProjects() {
-  // If the container isn't on the page, stop the script to prevent errors
+  // Safety check: if container doesn't exist on the page, stop running
   if (!container) return; 
 
   const query = (searchInput?.value || "").trim().toLowerCase();
@@ -71,32 +71,30 @@ function renderProjects() {
     )
     .join("");
 
-  // Re-bind modal buttons (requires main.js to be loaded)
+  // Re-bind modal buttons for the newly created cards
   container.querySelectorAll("[data-modal-title]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (typeof openModal === "function") {
-        openModal(btn.dataset.modalTitle, btn.dataset.modalBody);
-      } else {
-        console.error("openModal function not found. Is main.js loaded?");
-      }
+      openModal(btn.dataset.modalTitle, btn.dataset.modalBody);
     });
   });
 }
 
 // Run the function when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-  renderProjects();
-
-  if (searchInput) {
-    searchInput.addEventListener("input", renderProjects);
-  }
-
-  filterBtns.forEach((btn) =>
-    btn.addEventListener("click", () => {
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      activeFilter = btn.dataset.filter;
-      renderProjects();
-    })
-  );
+    renderProjects();
+    
+    if (searchInput) {
+        searchInput.addEventListener("input", renderProjects);
+    }
+    
+    if (filterBtns.length > 0) {
+        filterBtns.forEach((btn) =>
+            btn.addEventListener("click", () => {
+                filterBtns.forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
+                activeFilter = btn.dataset.filter;
+                renderProjects();
+            })
+        );
+    }
 });
