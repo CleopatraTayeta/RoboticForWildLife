@@ -1,4 +1,4 @@
-/* js/projects.js – dynamic project cards + search/filter */
+console.log("Projects script loaded successfully!");
 
 const projects = [
   {
@@ -36,6 +36,9 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 let activeFilter = "all";
 
 function renderProjects() {
+  // If the container isn't on the page, stop the script to prevent errors
+  if (!container) return; 
+
   const query = (searchInput?.value || "").trim().toLowerCase();
 
   const filtered = projects.filter((p) => {
@@ -68,17 +71,26 @@ function renderProjects() {
     )
     .join("");
 
-  // re-bind modal buttons
+  // Re-bind modal buttons (requires main.js to be loaded)
   container.querySelectorAll("[data-modal-title]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      openModal(btn.dataset.modalTitle, btn.dataset.modalBody);
+      if (typeof openModal === "function") {
+        openModal(btn.dataset.modalTitle, btn.dataset.modalBody);
+      } else {
+        console.error("openModal function not found. Is main.js loaded?");
+      }
     });
   });
 }
 
-if (container) {
+// Run the function when the page loads
+document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
-  searchInput?.addEventListener("input", renderProjects);
+
+  if (searchInput) {
+    searchInput.addEventListener("input", renderProjects);
+  }
+
   filterBtns.forEach((btn) =>
     btn.addEventListener("click", () => {
       filterBtns.forEach((b) => b.classList.remove("active"));
@@ -87,4 +99,4 @@ if (container) {
       renderProjects();
     })
   );
-}
+});
