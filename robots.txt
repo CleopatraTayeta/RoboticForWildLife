@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://cleopatratayeta.github.io/CleopatraTayeta_ST10533635_WEDE5020_POE/sitemap.xml
+
+Sitemap: https://cleopatratayeta.github.io/RoboticForWildLife/sitemap.xml
