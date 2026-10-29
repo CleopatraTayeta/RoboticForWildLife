@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Involved | RoboWild</title>
+    <meta name="description" content="Volunteer your robotics or IT skills, or sponsor RoboWild's conservation technology projects.">
+    <link rel="stylesheet" href="css_asset/style.css">
+    <script src="js_asset/main.js"></script>
+    <script src="js_asset/project.js"></script>
+    <script src="js_asset/gallery.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="RoboWild, wildlife conservation, robotics, IT volunteers, South Africa, anti-poaching, drones, conservation technology">
+<meta name="author" content="Cleopatra Tayeta">
+<meta property="og:title" content="RoboWild | Robotics for Wildlife">
+<meta property="og:description" content="Connecting robotics and IT volunteers with wildlife conservation projects.">
+<meta property="og:type" content="website">
+<link rel="icon" href="IMAGES/RoboWild.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.html">RoboWild</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Our Projects</a></li>
+                <li><a href="enquiry.html" class="active">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== PAGE BANNER ===== -->
+    <section class="page-banner">
+        <h1>Get Involved</h1>
+        <p>Volunteer your skills or sponsor a project. Either way, you help protect wildlife.</p>
+    </section>
+
+    <!-- ===== VOLUNTEER FORM ===== -->
+    <section class="content-block" id="volunteer">
+        <h2>Volunteer With Us</h2>
+        <p>
+            Tell us a bit about your skills and availability, and our Volunteer Coordinator
+            will be in touch about current opportunities that match your interests.
+        </p>
+        <form id="volunteer-form" class="enquiry-form" action="#" method="post">
+            <div class="form-row">
+                <label for="v-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="v-name" name="v-name" required minlength="2" placeholder="Your full name">
+            </div>
+            <div class="form-row">
+                <label for="v-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="v-email" name="v-email" required placeholder="you@example.com">
+            </div>
+            <div class="form-row">
+                <label for="v-phone">Phone Number</label>
+                <input type="tel" id="v-phone" name="v-phone" pattern="[0-9+\s]{7,15}" placeholder="e.g. 082 123 4567">
+            </div>
+            <div class="form-row">
+                <label for="v-skills">Area of Skill <span class="required">*</span></label>
+                <select id="v-skills" name="v-skills" required>
+                    <option value="" disabled selected>Select your area of expertise</option>
+                    <option value="robotics">Robotics Engineering</option>
+                    <option value="software">Software / Web Development</option>
+                    <option value="data">Data & AI</option>
+                    <option value="training">Training & Education</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="v-availability">Availability</label>
+                <input type="text" id="v-availability" name="v-availability" placeholder="e.g. Weekends, remote only">
+            </div>
+            <div class="form-row">
+                <label for="v-message">Tell Us About Yourself <span class="required">*</span></label>
+                <textarea id="v-message" name="v-message" rows="4" required minlength="10" placeholder="Share your experience and why you'd like to volunteer"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Volunteer Application</button>
+                  <small class="error-msg" id="c-name-error" aria-live="polite"> 
+            </small>
+<div id="contact-response" class="form-response" role="status" aria-live="polite">
+    <div class="form-response" role="status" aria-live="polite"></div>
+</div>
+<div class="form-row">
+  <fieldset>
+    <legend>Preferred Contact Method <span class="required">*</span></legend>
+    <label><input type="radio" name="contact-method" value="email" required> Email</label>
+    <label><input type="radio" name="contact-method" value="phone"> Phone</label>
+  </fieldset>
+</div>
+
+<div class="form-row checkbox-row">
+  <label>
+    <input type="checkbox" id="v-terms" name="v-terms" required>
+    I agree to RoboWild's volunteer code of conduct <span class="required">*</span>
+  </label>
+  <small class="error-msg" id="v-terms-error" aria-live="polite"></small>
+</div>
+        </form>
+    </section>
+
+    <!-- ===== SPONSOR FORM ===== -->
+    <section class="content-block alt-bg" id="sponsor">
+        <h2>Sponsor a Project</h2>
+        <p>
+            Individuals and businesses can sponsor equipment, training workshops or ongoing
+            field projects. Let us know how you'd like to support RoboWild's work.
+        </p>
+        <form id="sponsor-form" class="enquiry-form" action="#" method="post">
+            <div class="form-row">
+                <label for="s-name">Full Name / Organisation <span class="required">*</span></label>
+                <input type="text" id="s-name" name="s-name" required minlength="2" placeholder="Your name or organisation">
+            </div>
+            <div class="form-row">
+                <label for="s-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="s-email" name="s-email" required placeholder="you@example.com">
+            </div>
+            <div class="form-row">
+                <label for="s-phone">Phone Number</label>
+                <input type="tel" id="s-phone" name="s-phone" pattern="[0-9+\s]{7,15}" placeholder="e.g. 082 123 4567">
+            </div>
+            <div class="form-row">
+                <label for="s-type">Sponsorship Type <span class="required">*</span></label>
+                <select id="s-type" name="s-type" required>
+                    <option value="" disabled selected>Select a sponsorship type</option>
+                    <option value="equipment">Equipment Donation</option>
+                    <option value="financial">Financial Sponsorship</option>
+                    <option value="corporate">Corporate Partnership</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="s-message">Additional Details <span class="required">*</span></label>
+                <textarea id="s-message" name="s-message" rows="4" required minlength="10" placeholder="Tell us more about your sponsorship interest"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Sponsorship Enquiry</button>
+                  <small class="error-msg" id="c-name-error" aria-live="polite"></small>
+<div id="contact-response" class="form-response" role="status" aria-live="polite"></div>
+<div class="form-response" role="status" aria-live="polite"></div>
+        </form>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-contact">
+            <h3>RoboWild</h3>
+            <p>Pretoria, South Africa</p>
+            <p>Email: ST10533635@RCCONNECT.EDU.ZA</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Our Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="#" aria-label="RoboWild on Facebook">Facebook</a></li>
+                <li><a href="#" aria-label="RoboWild on Instagram">Instagram</a></li>
+                <li><a href="#" aria-label="RoboWild on LinkedIn">LinkedIn</a></li>
+            </ul>
+        </div>
+        <p class="copyright">&copy; 2026 RoboWild. All rights reserved.</p>
+    </footer>
+    <script src="js/validation.js" defer></script>
+</body>
+</html>

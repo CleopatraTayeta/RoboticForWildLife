@@ -1,0 +1,762 @@
+/* =====================================================================
+   ROBOWILD WEBSITE STYLESHEET
+   WEDE5020 Part 2 - CSS Styling and Responsive Design
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   0. WEB FONTS
+   Using Google Fonts: Poppins for headings, Open Sans for body text.
+   --------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+
+
+/* ---------------------------------------------------------------------
+   1. CSS RESET / BASE STYLE
+   --------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------------------------------
+   2. ROOT VARIABLES (Colour Palette from Part 1 Proposal)
+   --------------------------------------------------------------------- */
+:root {
+    --color-primary: #0F6E5C;      /* Forest Teal - primary */
+    --color-dark: #123B33;         /* Deep Pine - headings/text */
+    --color-accent: #B08D2E;       /* Bronze Gold - accents/CTA */
+    --color-bg-light: #E7F3EF;     /* Mist Green - backgrounds */
+    --color-white: #FFFFFF;
+    --color-grey: #666666;
+    --color-footer-bg: #17211F;
+
+    --font-heading: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    --font-body: 'Open Sans', Arial, sans-serif;
+
+    --max-width: 1200px;
+    --transition-speed: 0.25s;
+}
+
+/* ---------------------------------------------------------------------
+   3. BASE / DEFAULT STYLE CODE
+   --------------------------------------------------------------------- */
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---------------------------------------------------------------------
+   4. TYPOGRAPHY STYLES
+   --------------------------------------------------------------------- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    line-height: 1.25;
+    letter-spacing: 0.3px;
+}
+
+h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+}
+
+.page-banner p,
+.hero-content p {
+    color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------------
+   5. LAYOUT STRUCTURE (Flexbox / Grid)
+   --------------------------------------------------------------------- */
+
+/* --- Header / Navigation (Flexbox) --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 5%;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    font-weight: 600;
+    color: var(--color-dark);
+    padding: 0.35rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-speed), border-color var(--transition-speed);
+}
+
+/* --- Hero Section (Flexbox) --- */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    background-color: var(--color-dark);
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+/* --- Page Banner (used on inner pages) --- */
+.page-banner {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 4rem 5%;
+}
+
+.page-banner h1 {
+    color: var(--color-white);
+}
+
+/* --- Intro Text Block --- */
+.intro {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 5%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- Highlights Section Wrapper --- */
+.highlights {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 5% 4rem;
+    text-align: center;
+}
+
+/* --- General Content Blocks --- */
+.content-block {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+.content-block.alt-bg {
+    background-color: var(--color-bg-light);
+    max-width: 100%;
+}
+
+.content-block.alt-bg > * {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Two Column Layout (CSS Grid) --- */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+/* --- Highlight / Team Cards (CSS Grid) --- */
+.highlight-cards,
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card,
+.team-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card img,
+.team-card img {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* --- Audience List (Flexbox) --- */
+.audience-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.audience-list li {
+    flex: 1 1 250px;
+    background-color: var(--color-white);
+    border-left: 4px solid var(--color-accent);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Impact Stats (Flexbox) --- */
+.impact-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--color-bg-light);
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.stat {
+    flex: 1 1 150px;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.stat-label {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+/* --- Project Detail Sections (Flexbox, alternating) --- */
+.project-detail {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 5%;
+}
+
+.project-detail img {
+    flex: 1 1 40%;
+    border-radius: 10px;
+}
+
+.project-text {
+    flex: 1 1 55%;
+}
+
+.project-detail.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-text ul {
+    margin-top: 1rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+}
+
+.search-bar {
+  margin: 1.5rem 0 2rem;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.search-bar input[type="search"] {
+  padding: .8rem 1rem; border: 1px solid #c7d6d1;
+  border-radius: 6px; font-size: 1rem; max-width: 420px;
+}
+.filter-buttons { display: flex; gap: .6rem; flex-wrap: wrap; }
+.filter-btn {
+  padding: .5rem 1.2rem; border: 2px solid var(--color-primary);
+  background: transparent; color: var(--color-primary);
+  border-radius: 20px; cursor: pointer; font-weight: 600; transition: all .25s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--color-primary); color: #fff;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.project-card img {
+  width: 100%; height: 200px; object-fit: cover;
+  border-radius: 8px; margin-bottom: 1rem;
+}
+.btn-sm { padding: .55rem 1.2rem; font-size: .9rem; margin-top: .5rem; }
+.no-results { text-align: center; color: var(--color-grey); padding: 2rem; }
+
+/* --- Contact Details (Grid) --- */
+.contact-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+/* --- Map Grid --- */
+.map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+/* Map Enhancements */
+.map-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns map and button to the left */
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem; /* Creates space between map and button */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adds a slight shadow to match your cards */
+}
+
+.map-btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/* --- Forms (Flexbox column) --- */
+.enquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 650px;
+    margin-top: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-row label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.required {
+    color: var(--color-accent);
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+    text-align: center;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 4rem 5%;
+}
+
+.cta-banner h2 {
+    color: var(--color-white);
+}
+
+/* --- Footer (CSS Grid) --- */
+.site-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    background-color: var(--color-footer-bg);
+    color: var(--color-white);
+    padding: 3rem 5% 1.5rem;
+}
+
+.site-footer h3 {
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+}
+
+.site-footer a {
+    color: #cfe3dd;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: #a9bdb8;
+}
+
+/* =====================================================================
+   6. DECORATIVE / VISUAL STYLES
+   ===================================================================== */
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 0.85rem 2rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+}
+
+/* --- Form field decoration --- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #c7d6d1;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--color-white);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* =====================================================================
+   7. PSEUDO-CLASSES (Interactive Elements)
+   ===================================================================== */
+
+/* Navigation links */
+.main-nav a:hover,
+.main-nav a:focus {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-accent);
+}
+
+.main-nav a.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.main-nav a:active {
+    color: var(--color-accent);
+}
+
+/* Buttons */
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #94741f;
+    color: var(--color-white);
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-secondary:active {
+    transform: scale(0.97);
+}
+
+/* Cards lift on hover */
+.card:hover,
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Footer links */
+.footer-links a:hover,
+.footer-links a:focus,
+.footer-social a:hover,
+.footer-social a:focus {
+    color: var(--color-accent);
+}
+
+/* Form field focus state */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(15, 110, 92, 0.15);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+  z-index: 1000; padding: 1rem;
+}
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-box {
+  background: #fff; border-radius: 12px;
+  max-width: 600px; width: 100%; max-height: 85vh; overflow-y: auto;
+  padding: 2rem; position: relative;
+  transform: translateY(20px); transition: transform .3s;
+}
+.modal-overlay.open .modal-box { transform: translateY(0); }
+.modal-close {
+  position: absolute; top: .75rem; right: 1rem;
+  background: none; border: none; font-size: 2rem; cursor: pointer;
+  color: #666; line-height: 1;
+}
+.modal-close:hover { color: #b42318; }
+
+/* Scroll reveal */
+.card, .team-card, .project-detail, .stat {
+  opacity: 0; transform: translateY(25px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.card.revealed, .team-card.revealed, .project-detail.revealed, .stat.revealed {
+  opacity: 1; transform: translateY(0);
+}
+
+/* =====================================================================
+   8. RESPONSIVE DESIGN
+   Breakpoints: Desktop (default), Tablet (<=1024px), Mobile (<=600px)
+   ===================================================================== */
+
+/* --- TABLET (max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .two-col,
+    .contact-details,
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-cards,
+    .team-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-detail,
+    .project-detail.reverse {
+        flex-direction: column;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.65rem;
+    }
+}
+
+/* --- MOBILE (max-width: 600px) --- */
+@media screen and (max-width: 600px) {
+    /* Navigation menu adjustment: stack vertically below logo */
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    /* Layout adjustment: single column everywhere */
+    .highlight-cards,
+    .team-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .impact-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Typography adjustment: smaller scale for small screens */
+    h1 {
+        font-size: 1.85rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .content-block,
+    .page-banner,
+    .cta-banner {
+        padding: 2.5rem 6%;
+    }
+
+    /* Image adjustment: hero shortened on small screens */
+    .hero {
+        min-height: 55vh;
+    }
+}
+
+.tabs { margin-top: 1.5rem; }
+.tab-buttons { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.tab-btn {
+  padding: .6rem 1.4rem; border: 2px solid var(--color-primary);
+  background: transparent; color: var(--color-primary);
+  border-radius: 6px; font-family: var(--font-heading);
+  font-weight: 600; cursor: pointer; transition: all .25s;
+}
+.tab-btn.active, .tab-btn:hover {
+  background: var(--color-primary); color: #fff;
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn .3s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem; margin-top: 1.5rem;
+}
+.gallery-item {
+  border: none; padding: 0; cursor: pointer;
+  border-radius: 10px; overflow: hidden;
+  transition: transform .25s;
+}
+.gallery-item:hover { transform: scale(1.03); }
+.gallery-item img {
+  width: 100%; height: 200px; object-fit: cover; display: block;
+}
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,.9);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: all .3s;
+  z-index: 1100; padding: 2rem;
+}
+.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox img {
+  max-width: 90vw; max-height: 80vh;
+  border-radius: 8px; object-fit: contain;
+}
+.lightbox-caption { color: #fff; margin-top: 1rem; text-align: center; }
+.lightbox-close {
+  position: absolute; top: 1rem; right: 1.5rem;
+  background: none; border: none; color: #fff;
+  font-size: 2.5rem; cursor: pointer; line-height: 1;
+}
+
+.error-msg { color: #b42318; font-size: .85rem; min-height: 1em; display: block; margin-top: .25rem; }
+.error-input { border-color: #b42318 !important; box-shadow: 0 0 0 3px rgba(180,35,24,.15) !important; }
+.success-input { border-color: #146c43 !important; }
+.form-response {
+  margin-top: 1rem; padding: 1rem; border-radius: 6px;
+  display: none; font-weight: 600;
+}
+.form-response.success { display: block; background: #e7f3ef; color: #0f6e5c; border-left: 4px solid #0f6e5c; }
+.form-response.error { display: block; background: #fdecea; color: #b42318; border-left: 4px solid #b42318; }
+
+fieldset { border: 1px solid #c7d6d1; border-radius: 6px; padding: .75rem 1rem; }
+legend { font-weight: 600; font-size: .95rem; padding: 0 .4rem; }
+fieldset label { display: inline-flex; align-items: center; gap: .4rem; margin-right: 1.5rem; }
+.checkbox-row { flex-direction: row; align-items: flex-start; }
+.checkbox-row label { display: flex; align-items: flex-start; gap: .5rem; font-weight: 400; }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us | RoboWild</title>
+    <meta name="description" content="Get in touch with RoboWild. Find our office location and partner reserve locations, or send us a message.">
+    <link rel="stylesheet" href="css_asset/style.css">
+    <script src="js_asset/main.js"></script>
+    <script src="js_asset/project.js"></script>
+    <script src="js_asset/gallery.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="RoboWild, wildlife conservation, robotics, IT volunteers, South Africa, anti-poaching, drones, conservation technology">
+<meta name="author" content="Cleopatra Tayeta">
+<meta property="og:title" content="RoboWild | Robotics for Wildlife">
+<meta property="og:description" content="Connecting robotics and IT volunteers with wildlife conservation projects.">
+<meta property="og:type" content="website">
+<link rel="icon" href="IMAGES/RoboWild.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.html">RoboWild</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Our Projects</a></li>
+                <li><a href="enquiry.html">Get Involved</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== PAGE BANNER ===== -->
+    <section class="page-banner">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you, wherever you're reaching out from.</p>
+    </section>
+
+    <!-- ===== CONTACT DETAILS ===== -->
+    <section class="content-block">
+        <div class="contact-details">
+            <div>
+                <h2>Head Office</h2>
+                <p>12 Conservation Way<br>Pretoria, 1101<br>South Africa</p>
+                <p>Tel: +27 78 814 4980</p>
+                <p>Email: ST10533635@RCCONNECT.EDU.ZA</p>
+            </div>
+            <div>
+                <h2>Field Office</h2>
+                <p>Skukuza Field Station<br>Kruger National Park, 1350<br>South Africa</p>
+                <p>Tel: +27 70 517 5455</p>
+                <p>Email: ST10533635@RCCONNECT.EDU.ZA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAPS: MORE THAN ONE LOCATION ===== -->
+    <section class="content-block alt-bg">
+        <h2>Find Us</h2>
+        <div class="map-grid">
+            <div class="map-wrapper">
+  <h3>Pretoria Head Office</h3>
+  <iframe
+    title="RoboWild Head Office location in Pretoria"
+    src="https://maps.google.com/maps?q=PTA%20Pretoria%2C%20South%20Africa&output=embed"
+    width="100%" height="250" style="border:0;" loading="lazy"
+    allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <a class="btn btn-primary btn-sm"
+     href="https://www.google.com/maps/dir/?api=1&destination=Pretoria,South+Africa"
+     target="_blank" rel="noopener">Get Directions</a>
+</div>
+       <div class="map-wrapper">
+    <h3>Kruger National Park Field Office</h3>
+    <iframe
+        title="RoboWild Field Office location near Skukuza, Kruger National Park"
+        src="https://maps.google.com/maps?q=Skukuza%2C%20Kruger%20National%20Park&output=embed"
+        width="100%"  height="250"  style="border:0;" loading="lazy" 
+        allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <a class="btn btn-primary btn-sm map-btn"
+       href="https://www.google.com/maps/dir/?api=1&destination=Skukuza,Camp,Kruger+National+Park,South+Africa"
+       target="_blank" rel="noopener">
+       Get Directions
+    </a>
+</div>
+    </section>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <section class="content-block">
+        <h2>Send Us a Message</h2>
+        <form id="contact-form" class="enquiry-form" action="#" method="post">
+            <div class="form-row">
+                <label for="c-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="c-name" name="c-name" required minlength="2" placeholder="Your full name">
+            </div>
+            <div class="form-row">
+                <label for="c-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="c-email" name="c-email" required placeholder="you@example.com">
+            </div>
+            <div class="form-row">
+                <label for="c-subject">Subject <span class="required">*</span></label>
+                <select id="c-subject" name="c-subject" required>
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="general">General Enquiry</option>
+                    <option value="media">Media / Press</option>
+                    <option value="partnership">Partnership Enquiry</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="c-message">Message <span class="required">*</span></label>
+                <textarea id="c-message" name="c-message" rows="5" required minlength="10" placeholder="Write your message here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <small class="error-msg" id="c-name-error" aria-live="polite"> 
+            </small>
+<div id="contact-response" class="form-response" role="status" aria-live="polite">
+</div>
+        </form>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-contact">
+            <h3>RoboWild</h3>
+            <p>Pretoria, South Africa</p>
+            <p>Email: ST10533635@RCCONNECT.EDU.ZA</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Our Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="#" aria-label="RoboWild on Facebook">Facebook</a></li>
+                <li><a href="#" aria-label="RoboWild on Instagram">Instagram</a></li>
+                <li><a href="#" aria-label="RoboWild on LinkedIn">LinkedIn</a></li>
+            </ul>
+        </div>
+        <p class="copyright">&copy; 2026 RoboWild. All rights reserved.</p>
+    </footer>
+    <script src="js/validation.js" defer></script>
+</body>
+</html>
