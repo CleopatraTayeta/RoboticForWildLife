@@ -1,4 +1,4 @@
-/* js/projects.js – dynamic project cards + search/filter */
+console.log("Projects script loaded successfully!");
 
 const projects = [
   {
@@ -36,7 +36,7 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 let activeFilter = "all";
 
 function renderProjects() {
-  // Safety check: if container doesn't exist on the page, stop running
+  // If the container isn't on the page, stop the script to prevent errors
   if (!container) return; 
 
   const query = (searchInput?.value || "").trim().toLowerCase();
@@ -71,30 +71,32 @@ function renderProjects() {
     )
     .join("");
 
-  // Re-bind modal buttons for the newly created cards
+  // Re-bind modal buttons (requires main.js to be loaded)
   container.querySelectorAll("[data-modal-title]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      openModal(btn.dataset.modalTitle, btn.dataset.modalBody);
+      if (typeof openModal === "function") {
+        openModal(btn.dataset.modalTitle, btn.dataset.modalBody);
+      } else {
+        console.error("openModal function not found. Is main.js loaded?");
+      }
     });
   });
 }
 
 // Run the function when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-    renderProjects();
-    
-    if (searchInput) {
-        searchInput.addEventListener("input", renderProjects);
-    }
-    
-    if (filterBtns.length > 0) {
-        filterBtns.forEach((btn) =>
-            btn.addEventListener("click", () => {
-                filterBtns.forEach((b) => b.classList.remove("active"));
-                btn.classList.add("active");
-                activeFilter = btn.dataset.filter;
-                renderProjects();
-            })
-        );
-    }
+  renderProjects();
+
+  if (searchInput) {
+    searchInput.addEventListener("input", renderProjects);
+  }
+
+  filterBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilter = btn.dataset.filter;
+      renderProjects();
+    })
+  );
 });
