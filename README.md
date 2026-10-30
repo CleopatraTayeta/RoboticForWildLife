@@ -16,6 +16,7 @@ https://cleopatratayeta.github.io/RoboticForWildLife/
 - **Our Projects** – `service.html` (Includes dynamic project cards, live search, and category filters)
 - **Get Involved** – `enquiry.html` (Includes validated Volunteer and Sponsor forms)
 - **Contact** – `contact.html` (Includes interactive location maps, contact details, and a validated contact form)
+- **HTML Sitemap** – `sitemap.html` (A user-friendly, styled page linking to all main pages)
 
 ---
 
@@ -23,7 +24,7 @@ https://cleopatratayeta.github.io/RoboticForWildLife/
 
 ### Changelog
 - **2026-09-11:** Renamed all HTML files to lowercase so links work correctly on GitHub.
-- **2026-09-11:** Created external stylesheet `css/style.css` and linked it on every page.
+- **2026-09-11:** Created external stylesheet `css_asset/style.css` and linked it on every page.
 - **2026-09-11:** Implemented CSS reset, default typography, colour scheme and base styles.
 - **2026-09-11:** Applied Flexbox for header/navigation and hero section.
 - **2026-09-11:** Applied CSS Grid for project cards, two-column sections and footer.
@@ -35,13 +36,13 @@ https://cleopatratayeta.github.io/RoboticForWildLife/
 ### Testing
 Tested using browser developer tools on:
 - **Desktop\PC (>1024px)**
-  <img width="1920" height="1080" alt="screenshoot of TEST IN DIFFERENT DEVICES/Screenshot 2026-09-11 111851.png" src="https://github.com/user-attachments/assets/a7e90768-746e-4a12-a5d6-ba1fde5d71cc" />
+  <img width="1920" height="1080" alt="Screenshot 2026-09-11 111851" src="https://github.com/user-attachments/assets/a7e90768-746e-4a12-a5d6-ba1fde5d71cc" />
 
 - **Tablet (~768–900px)**
   *(Insert Tablet Screenshot Here if available)*
 
 - **Mobile (~375–600px)**
-  <img width="720" height="1280" alt="screenshoot of TEST IN DIFFERENT DEVICES/WhatsApp Image 2026-09-11 at 12.52.03.jpeg" src="https://github.com/user-attachments/assets/19e3cd1b-9aa7-401c-b577-817170473e80" />
+  <img width="720" height="1280" alt="WhatsApp Image 2026-09-11 at 12 52 03" src="https://github.com/user-attachments/assets/19e3cd1b-9aa7-401c-b577-817170473e80" />
 
 ### Part 2 References
 - Google Fonts (2026) *Google Fonts*. Available at: https://fonts.google.com (Accessed: 12 August 2026).
@@ -66,16 +67,20 @@ Tested using browser developer tools on:
 - **2026-10-28:** Added client-side validation (`js_asset/validation.js`) for contact and enquiry forms with inline error messages.
 - **2026-10-28:** Added AJAX form submission (`js_asset/form-handler.js`) using Formspree for contact and enquiry forms.
 - **2026-10-28:** Added radio buttons and a required terms checkbox to the volunteer enquiry form.
-- **2026-10-28:** Added valid social media links to the footer of all pages.
-- **2026-10-28:** Added comprehensive SEO meta tags (keywords, Open Graph, author, viewport) to all pages.
-- **2026-10-28:** Added `robots.txt` and `sitemap.xml` to the root directory for search engine crawling.
-- **2026-10-28:** Improved accessibility with `aria-live`, `role="dialog"`, `role="tablist"` and labelled form controls.
+- **2026-10-28:** Added valid social media links (Facebook, Instagram, LinkedIn) to the footer of all pages.
+- **2026-10-28:** Added `mailto:` links to all email addresses so they open the user's default email client.
+- **2026-10-30:** Created a user-facing HTML Sitemap (`sitemap.html`) and styled it using CSS.
+- **2026-10-30:** Created an XML Sitemap (`sitemap.xml`), added `robots.txt`, and styled the XML using `sitemap.xsl`.
+- **2026-10-30:** Added comprehensive SEO meta tags (keywords, Open Graph, author, viewport) to all pages.
+- **2026-10-30:** Improved accessibility with `aria-live`, `role="dialog"`, `role="tablist"` and labelled form controls.
 
 ### Testing
 - Tested all forms with valid/invalid inputs on Chrome and Firefox to ensure validation and AJAX submission work correctly.
 - Tested live search and category filters on `service.html`.
 - Tested lightbox keyboard (Esc) and click-outside behaviour.
 - Tested interactive tabs on the About page.
+- Tested `mailto:` links to ensure they trigger the default mail application.
+- Verified HTML and XML sitemaps are formatted correctly and accessible.
 - Tested responsive layout at 375px, 768px and 1440px.
 
 ### Part 3 References
@@ -84,3 +89,4 @@ Tested using browser developer tools on:
 - MDN Web Docs (2026) *Intersection Observer API*. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API (Accessed: 28 October 2026).
 - Google Maps Platform (2026) *Maps URLs*. Available at: https://developers.google.com/maps/documentation/urls/get-started (Accessed: 28 October 2026).
 - W3Schools (2026) *JavaScript HTML DOM*. Available at: https://www.w3schools.com/js (Accessed: 28 October 2026).
+- W3Schools (2026) *XML Sitemaps*. Available at: https://www.w3schools.com/xml/xml_sitemap.asp (Accessed: 30 October 2026).
