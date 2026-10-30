@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
   <url>
-    <loc>https://github.com/CleopatraTayeta/RoboticForWildLife.git/index.html</loc>
+    <loc>https://cleopatratayeta.github.io/RoboticForWildLife/index.html</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://github.com/CleopatraTayeta/RoboticForWildLife.git/about.html</loc>
+    <loc>https://cleopatratayeta.github.io/RoboticForWildLife/about.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://github.com/CleopatraTayeta/RoboticForWildLife.git/service.html</loc>
+    <loc>https://cleopatratayeta.github.io/RoboticForWildLife/service.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://github.com/CleopatraTayeta/RoboticForWildLife.git/enquiry.html</loc>
+    <loc>https://cleopatratayeta.github.io/RoboticForWildLife/enquiry.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://github.com/CleopatraTayeta/RoboticForWildLife.git/contact.html</loc>
+    <loc>https://cleopatratayeta.github.io/RoboticForWildLife/contact.html</loc>
     <priority>0.9</priority>
   </url>
-</urlset> 
+  <url>
+    <loc>https://cleopatratayeta.github.io/RoboticForWildLife/sitemap.html</loc>
+    <priority>0.5</priority>
+  </url>
+</urlset>

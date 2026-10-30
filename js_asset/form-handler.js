@@ -27,8 +27,7 @@ async function submitFormAjax(form, endpoint, responseEl) {
     }
   } catch (err) {
     responseEl.className = "form-response error";
-    responseEl.textContent =
-      "Sorry, something went wrong. Please email us directly at ST10533635@RCCONNECT.EDU.ZA.";
+   responseEl.textContent = "Sorry, something went wrong. Please email us directly at ST10533635@RCCONNECT.EDU.ZA.";
   }
 }
 
