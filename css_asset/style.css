@@ -761,48 +761,6 @@ fieldset label { display: inline-flex; align-items: center; gap: .4rem; margin-r
 .checkbox-row { flex-direction: row; align-items: flex-start; }
 .checkbox-row label { display: flex; align-items: flex-start; gap: .5rem; font-weight: 400; }
 
-/* HTML Sitemap Page Styles */
-.html-sitemap {
-    list-style: none;
-    padding: 0;
-    margin-top: 2rem;
-}
-
-.html-sitemap li {
-    background-color: var(--color-bg-light);
-    border-left: 5px solid var(--color-primary);
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.html-sitemap li:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.html-sitemap a {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-}
-
-.html-sitemap a:hover {
-    color: var(--color-accent);
-    text-decoration: underline;
-}
-
-.html-sitemap p {
-    margin: 0;
-    color: var(--color-dark);
-    font-size: 0.95rem;
-}
-
 /* Email Links */
 .footer-contact a,
 .contact-details a {
@@ -815,4 +773,53 @@ fieldset label { display: inline-flex; align-items: center; gap: .4rem; margin-r
 .contact-details a:hover {
     color: var(--color-primary); /* Turns dark green when hovered */
     text-decoration: underline;
+}
+/* =====================================================================
+   9. HTML SITEMAP PAGE STYLES
+   ===================================================================== */
+
+.html-sitemap {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.html-sitemap li {
+    background-color: var(--color-white);
+    border-left: 6px solid var(--color-primary); /* Green accent line */
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.html-sitemap li:hover {
+    transform: translateX(8px); /* Slides right slightly on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.html-sitemap a {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    transition: color 0.25s ease;
+}
+
+.html-sitemap a:hover {
+    color: var(--color-accent); /* Turns gold on hover */
+    text-decoration: underline;
+}
+
+.html-sitemap p {
+    margin: 0;
+    color: var(--color-grey);
+    font-size: 1rem;
+    line-height: 1.5;
 }
